@@ -97,7 +97,7 @@ function Footer() {
         <span style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", marginLeft: 10 }}>Making Learning Matter</span>
       </div>
       <p style={{ fontSize: 12, color: "rgba(255,255,255,0.35)", margin: 0, fontFamily: "system-ui" }}>
-        A DNACreative product · dnacreative.co/impact
+        A DNACreative product · dnaedu.org
       </p>
     </div>
   );
