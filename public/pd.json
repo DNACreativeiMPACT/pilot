@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "The Science of Why iMPACT Works",
+    "subtitle": "Engagement, motivation, and the research behind real-world assessment",
+    "description": "This session unpacks the science behind iMPACT — why connecting learning to real-world outcomes drives deeper engagement, stronger retention, and more meaningful student motivation. Drawing on Self-Determination Theory, authentic assessment research, and lived classroom examples, participants leave with a clear understanding of why shifting the finish line from 'did you learn it?' to 'did it make the world better?' transforms how students relate to their learning.",
+    "audience": "Teachers, coordinators, and school leaders",
+    "duration": "90 minutes",
+    "format": "Workshop (in-person or virtual)"
+  },
+  {
+    "id": 2,
+    "title": "Assessing Impact with Integrity",
+    "subtitle": "How to grade real-world evidence fairly, consistently, and without losing your mind",
+    "description": "iMPACT assessments look different from traditional tasks — the evidence is messier, the timelines are longer, and every student's starting point is different. This session walks participants through the iMPACT rubric framework, explores how to assess proportional change rather than absolute outcomes, and tackles the practical challenges of delayed grading, contextual fairness, and AI-proof evidence. Participants practise grading real sample portfolios and leave with confidence in the assessment model.",
+    "audience": "Teachers and assessment coordinators",
+    "duration": "90 minutes",
+    "format": "Workshop (in-person or virtual)"
+  },
+  {
+    "id": 3,
+    "title": "Design Your Own iMPACT",
+    "subtitle": "Build a bespoke iMPACT pack for your subject and context",
+    "description": "Already convinced by the model? This hands-on session guides participants through designing their own iMPACT pack from scratch — identifying the right challenge, defining authentic evidence, building a fair rubric, and planning the teacher journey. By the end, each participant (or team) has a draft iMPACT pack ready to pilot. Ideal for schools wanting to extend iMPACT beyond the existing 20 packs into their own curriculum context.",
+    "audience": "Teachers and curriculum designers",
+    "duration": "2 hours",
+    "format": "Workshop (in-person or virtual)"
+  },
+  {
+    "id": 4,
+    "title": "From Service as Action to Community Engagement",
+    "subtitle": "Rethinking how IB schools connect students to their communities",
+    "description": "Many IB schools struggle with Service as Action — it becomes a tick-box exercise, disconnected from learning and difficult to monitor. This session presents a practical alternative: a Community Engagement Framework built on the ACT progression (Aware → Collaborate → Transform) that integrates naturally with iMPACT and gives students agency over how they contribute. Participants explore how to move from 'did you do your hours?' to 'did you make a difference?'",
+    "audience": "MYP coordinators, homeroom teachers, and school leaders",
+    "duration": "90 minutes",
+    "format": "Workshop (in-person or virtual)"
+  },
+  {
+    "id": 5,
+    "title": "Making Learning Matter: An Introduction to iMPACT",
+    "subtitle": "A whistle-stop tour for schools considering the framework",
+    "description": "A concise overview of the iMPACT model for schools exploring whether it's right for them. Covers the four domains, the evidence-based assessment approach, the delayed grading model, AI integrity, and what implementation looks like in practice. Includes live exploration of sample packs and time for questions. No commitment required — just curiosity.",
+    "audience": "School leaders, heads of department, and curriculum teams",
+    "duration": "45 minutes",
+    "format": "Presentation (in-person or virtual)"
+  }
+]
