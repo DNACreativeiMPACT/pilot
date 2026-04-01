@@ -96,9 +96,7 @@ function Footer() {
         <span style={{ fontSize: 20, color: C.white, fontWeight: 700 }}>MPACT</span>
         <span style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", marginLeft: 10 }}>Making Learning Matter</span>
       </div>
-      <p style={{ fontSize: 12, color: "rgba(255,255,255,0.35)", margin: 0, fontFamily: "system-ui" }}>
-        A DNACreative product · dnaedu.org
-      </p>
+     <p style={{ fontSize: 12, color: "rgba(255,255,255,0.35)", margin: 0, fontFamily: "system-ui" }}>A DNACreative product · <a href="https://dnaedu.org" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>dnaedu.org</a></p>
     </div>
   );
 }
