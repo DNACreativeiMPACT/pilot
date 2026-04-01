@@ -1,0 +1,536 @@
+[
+  {
+    "id": 1,
+    "domain": "self",
+    "subject": "Science",
+    "unit": "Energy & Electricity",
+    "title": "Making Energy Learning Matter",
+    "subtitle": "by Reducing Household Energy Consumption",
+    "challenge": "Students reduce their household's energy consumption and sustain that reduction for at least 8 weeks, proving it with real billing data.",
+    "evidence": [
+      "Baseline energy bills (4+ weeks before)",
+      "Action plan (max 1 page)",
+      "Weekly photo/screenshot log",
+      "Impact bills showing sustained reduction",
+      "Household voice statement",
+      "Reflection (max 500 words)"
+    ],
+    "window": "8–12 weeks",
+    "grading": "Delayed (next term possible)",
+    "ai": "High — effort to fabricate exceeds effort to act",
+    "phases": [
+      "Prepare: Parent letters, tracking setup, adapted arrangements",
+      "Teach: Normal unit + introduce challenge in final lessons",
+      "Live It: Background portfolio building, 5-min check-ins every 2–3 weeks",
+      "Harvest: Celebrate, grade, share collective impact"
+    ],
+    "pdf": "iMPACT_Pack_Energy_Conservation.pdf"
+  },
+  {
+    "id": 2,
+    "domain": "self",
+    "subject": "Science / PHE",
+    "unit": "Nutrition & Health",
+    "title": "Making Nutrition Learning Matter",
+    "subtitle": "by Actually Changing How Your Household Eats",
+    "challenge": "Students apply what they learn about nutrition to genuinely improve their household's eating habits — cooking, shopping, meal planning — with sustained evidence of healthier choices.",
+    "evidence": [
+      "Baseline meal log (1 week of typical meals, photos)",
+      "Nutrition action plan created with household",
+      "Weekly meal photos + brief log entries",
+      "Sustained meal data showing change (8+ weeks)",
+      "Household voice on what changed and how it felt",
+      "Reflection connecting science to lived change"
+    ],
+    "window": "8–12 weeks",
+    "grading": "Delayed (next term possible)",
+    "ai": "High — meal photos with context are authentic and personal",
+    "phases": [
+      "Prepare: Parent letter, discuss household food cultures sensitively, clarify we celebrate all cuisines",
+      "Teach: Normal nutrition unit + introduce challenge in final lessons",
+      "Live It: Students cook, shop, plan — weekly logs build in background",
+      "Harvest: Share recipes and stories, grade sustained change, celebrate"
+    ],
+    "pdf": "iMPACT_Pack_Nutrition.pdf"
+  },
+  {
+    "id": 3,
+    "domain": "self",
+    "subject": "PHE / Science",
+    "unit": "Fitness & Body Systems",
+    "title": "Making Fitness Learning Matter",
+    "subtitle": "by Actually Becoming and Staying Measurably Fitter",
+    "challenge": "Students apply their understanding of body systems and fitness to genuinely improve a measurable aspect of their physical fitness — and sustain it beyond the unit.",
+    "evidence": [
+      "Baseline fitness assessment (chosen metric: time, distance, reps, flexibility)",
+      "Training plan grounded in the science learned",
+      "Weekly training log with data",
+      "Progress assessments at 4-week intervals",
+      "Final assessment showing sustained improvement",
+      "Reflection connecting body systems knowledge to real training experience"
+    ],
+    "window": "8–12 weeks",
+    "grading": "Delayed",
+    "ai": "High — physical performance data is lived and embodied",
+    "phases": [
+      "Prepare: Baseline testing protocols, safety considerations, inclusive approaches for all abilities",
+      "Teach: Normal body systems/fitness unit",
+      "Live It: Students train independently, log data, reassess monthly",
+      "Harvest: Final assessments, celebrate personal bests and sustained commitment"
+    ],
+    "pdf": "iMPACT_Pack_Fitness.pdf"
+  },
+  {
+    "id": 4,
+    "domain": "self",
+    "subject": "Maths / I&S",
+    "unit": "Financial Literacy",
+    "title": "Making Financial Learning Matter",
+    "subtitle": "by Actually Changing Your Spending and Saving Behaviour",
+    "challenge": "Students apply financial literacy to genuinely change their own money habits — saving more, spending more wisely, budgeting effectively — with sustained evidence of changed behaviour.",
+    "evidence": [
+      "Baseline spending/saving snapshot (2 weeks)",
+      "Financial plan with realistic personal goals",
+      "Weekly money log (pocket money, earnings, spending decisions)",
+      "Sustained data showing behaviour change (8+ weeks)",
+      "Reflection connecting maths concepts to real financial decisions"
+    ],
+    "window": "8–12 weeks",
+    "grading": "Delayed",
+    "ai": "High — personal financial records are timestamped and individual",
+    "phases": [
+      "Prepare: Handle financial diversity sensitively, offer adapted approaches, parent letter",
+      "Teach: Normal financial literacy unit",
+      "Live It: Students track, adjust, and sustain new habits in background",
+      "Harvest: Share strategies (never amounts), celebrate discipline and growth"
+    ],
+    "pdf": "iMPACT_Pack_Financial_Literacy.pdf"
+  },
+  {
+    "id": 5,
+    "domain": "self",
+    "subject": "PHE / Design",
+    "unit": "Digital Wellness",
+    "title": "Making Digital Wellness Learning Matter",
+    "subtitle": "by Reducing and Sustaining Healthier Screen Habits",
+    "challenge": "Students apply what they learn about digital wellness to genuinely reduce their non-productive screen time and sustain healthier digital habits, evidenced by real device data.",
+    "evidence": [
+      "Baseline screen time data (2 weeks, from device settings)",
+      "Digital wellness plan with specific targets",
+      "Weekly screenshots of screen time reports",
+      "Sustained data showing reduced/shifted usage (8+ weeks)",
+      "Reflection on what changed, what was hard, and what they learned about themselves"
+    ],
+    "window": "8–12 weeks",
+    "grading": "Delayed",
+    "ai": "High — device screen time reports are timestamped and personal",
+    "phases": [
+      "Prepare: Parent letter, sensitivity around device access and autonomy",
+      "Teach: Normal digital wellness unit",
+      "Live It: Students implement changes, weekly screen time screenshots build portfolio",
+      "Harvest: Share strategies, grade sustained change, celebrate healthier habits"
+    ],
+    "pdf": "iMPACT_Pack_Digital_Wellness.pdf"
+  },
+  {
+    "id": 6,
+    "domain": "society",
+    "subject": "Language & Literature",
+    "unit": "Persuasive Writing",
+    "title": "Making Persuasive Writing Matter",
+    "subtitle": "by Achieving Real Change Through Advocacy",
+    "challenge": "Students write to a real audience about a real issue they care about — and the grade comes from whether it achieved a positive response, opened a conversation, or led to change.",
+    "evidence": [
+      "Sent letter/email with timestamp and recipient details",
+      "Evidence of follow-up attempts if no initial response",
+      "Response received or change documented (policy shift, published reply, meeting arranged, acknowledgement)",
+      "Reflection on the advocacy process, what persuasion techniques worked, and what they'd do differently"
+    ],
+    "window": "4–8 weeks",
+    "grading": "Same term — responses typically arrive within weeks",
+    "ai": "High — real correspondence with real recipients is verifiable",
+    "phases": [
+      "Prepare: Identify real issues students care about, research appropriate recipients",
+      "Teach: Normal persuasive writing unit + craft real letters to real people",
+      "Live It: Letters sent, follow-ups tracked, responses collected over 4–8 weeks",
+      "Harvest: Share outcomes, grade the real-world result, celebrate every response"
+    ],
+    "pdf": "iMPACT_Pack_Persuasive_Writing.pdf"
+  },
+  {
+    "id": 7,
+    "domain": "society",
+    "subject": "Any Subject",
+    "unit": "Teaching & Mentoring",
+    "title": "Making Any Learning Matter",
+    "subtitle": "by Teaching a Skill to Someone Who Needs It",
+    "challenge": "Students teach a meaningful skill to someone — a younger child, a family member, a community member — and prove that person can now demonstrably do what they couldn't before.",
+    "evidence": [
+      "Identified learner and documented their starting point",
+      "Teaching plan (what, how, when)",
+      "Documentation of teaching sessions (photos, video clips, or log)",
+      "Evidence the learner can now perform the skill (video, testimony, demonstration)",
+      "Learner's own testimony about the experience",
+      "Reflection on what made their teaching effective or what they'd change"
+    ],
+    "window": "3–6 weeks",
+    "grading": "Same term — skill transfer is demonstrable quickly",
+    "ai": "High — video evidence of another person's learning can't be generated",
+    "phases": [
+      "Prepare: Identify willing learners, match skills to genuine needs",
+      "Teach: Build subject knowledge + introduce the teaching challenge",
+      "Live It: Students teach, document, iterate over 3–6 weeks",
+      "Harvest: Showcase learner outcomes, celebrate skill transfer"
+    ],
+    "pdf": "iMPACT_Pack_Teaching_a_Skill.pdf"
+  },
+  {
+    "id": 8,
+    "domain": "society",
+    "subject": "Languages",
+    "unit": "Communication & Culture",
+    "title": "Making Language Learning Matter",
+    "subtitle": "by Building a Healthy Cross-Cultural Relationship",
+    "challenge": "Students use their target language to build and maintain a genuine, respectful, healthy relationship with someone from that language community — sustained through regular communication over weeks.",
+    "evidence": [
+      "Identified language partner or connection (pen pal, community member, school link)",
+      "Communication log showing regular interaction (messages, calls, meetings) over 6+ weeks",
+      "Evidence of deepening exchange (not just transactional — shared interests, mutual learning)",
+      "Partner's testimony about the relationship",
+      "Reflection on cultural understanding gained and what respectful cross-cultural connection means to them"
+    ],
+    "window": "6–10 weeks",
+    "grading": "Medium — graded once sustained contact is evidenced",
+    "ai": "High — a real relationship over time with a real person can't be faked",
+    "phases": [
+      "Prepare: Identify partners through pen pal programmes, community groups, or sister school links",
+      "Teach: Normal language/culture unit + introduce relationship challenge",
+      "Live It: Regular communication sustained over weeks, logged and reflected on",
+      "Harvest: Share stories of connection, celebrate relationships built"
+    ],
+    "pdf": "iMPACT_Pack_Cross_Cultural_Relationship.pdf"
+  },
+  {
+    "id": 9,
+    "domain": "society",
+    "subject": "Maths / I&S",
+    "unit": "Statistics & Data Analysis",
+    "title": "Making Data Learning Matter",
+    "subtitle": "by Helping a Decision-Maker Make a Better Choice",
+    "challenge": "Students use data analysis skills to help a real person, organisation, or community group make a better, more informed decision — and prove that decision was improved by their work.",
+    "evidence": [
+      "Identified decision-maker and the decision they face",
+      "Data collected, cleaned, and analysed with appropriate methods",
+      "Findings communicated to the decision-maker in an accessible format",
+      "Decision-maker testimony confirming they used the analysis and how it helped",
+      "Reflection on how data literacy made a real difference"
+    ],
+    "window": "3–6 weeks",
+    "grading": "Same term — the decision point creates a natural endpoint",
+    "ai": "High — real decision-maker testimony about a real decision",
+    "phases": [
+      "Prepare: Help students identify real decisions in school, community, or family that need data",
+      "Teach: Normal statistics/data unit + introduce the decision challenge",
+      "Live It: Students collect data, analyse, present to their decision-maker",
+      "Harvest: Decision-maker feedback collected, grade the real-world contribution"
+    ],
+    "pdf": "iMPACT_Pack_Data_for_Decisions.pdf"
+  },
+  {
+    "id": 10,
+    "domain": "society",
+    "subject": "Arts",
+    "unit": "Performance & Social Commentary",
+    "title": "Making Arts Learning Matter",
+    "subtitle": "by Shifting Audience Understanding of a Social Issue",
+    "challenge": "Students create and present a performance, exhibition, or artwork that measurably shifts their audience's understanding of, empathy for, or engagement with a social issue — for the better.",
+    "evidence": [
+      "Identified social issue and target audience",
+      "Creative work developed (performance, exhibition, installation, film, music)",
+      "Pre-performance audience survey (awareness/understanding baseline)",
+      "Performance/exhibition delivered to real audience",
+      "Post-performance audience survey showing measurable shift",
+      "Reflection on artistic choices, audience response, and what they learned about art as a force for good"
+    ],
+    "window": "3–5 weeks",
+    "grading": "Same term — performance happens, surveys collected, graded",
+    "ai": "High — live performance with real audience survey data",
+    "phases": [
+      "Prepare: Identify issues, plan audiences, design pre/post surveys",
+      "Teach: Normal arts unit + develop work for real audience and real issue",
+      "Live It: Work created, rehearsed, performed/exhibited to real audience",
+      "Harvest: Survey data analysed, grade the measured shift, celebrate impact"
+    ],
+    "pdf": "iMPACT_Pack_Arts_Social_Issue.pdf"
+  },
+  {
+    "id": 11,
+    "domain": "spaces",
+    "subject": "Design",
+    "unit": "Product Design",
+    "title": "Making Design Learning Matter",
+    "subtitle": "by Creating Something Someone Actually Uses",
+    "challenge": "Students design and make a product that solves a real problem for a real person — and the grade comes from whether that person is still using it weeks later.",
+    "evidence": [
+      "Identified user and their genuine need (interview/observation)",
+      "Design process documentation (iterations, prototyping, testing)",
+      "Finished product delivered to user",
+      "User feedback at 2 weeks and 6 weeks post-delivery",
+      "Usage evidence (photos of product in use, testimony)",
+      "Reflection on the design process and what 'useful' really means"
+    ],
+    "window": "6–8 weeks post-delivery",
+    "grading": "Medium — first check at 2 weeks, final grade at 6 weeks",
+    "ai": "High — real user testimony over time about a physical product",
+    "phases": [
+      "Prepare: Identify real users with real needs in school or community",
+      "Teach: Normal design unit + build for the real user throughout",
+      "Live It: Product delivered, check-ins with user at 2 and 6 weeks",
+      "Harvest: User testimony collected, grade real-world usefulness, celebrate"
+    ],
+    "pdf": "iMPACT_Pack_Product_Design.pdf"
+  },
+  {
+    "id": 12,
+    "domain": "spaces",
+    "subject": "Science / I&S",
+    "unit": "Ecosystems & Biodiversity",
+    "title": "Making Biodiversity Learning Matter",
+    "subtitle": "by Increasing Species Count in a Local Area",
+    "challenge": "Students take action to increase biodiversity in a specific local area — planting, creating habitats, removing invasives — and prove with survey data that species count went up and stayed up.",
+    "evidence": [
+      "Baseline species survey of chosen area (standardised method)",
+      "Intervention plan (habitat creation, planting, removal, etc.)",
+      "Implementation documentation (photos, log)",
+      "Follow-up species surveys at monthly intervals",
+      "Final survey showing sustained increase compared to baseline",
+      "Reflection on ecosystems, intervention effectiveness, and what biodiversity means locally"
+    ],
+    "window": "12–16 weeks",
+    "grading": "Delayed (likely next semester)",
+    "ai": "High — field survey data with dated photos at a real location",
+    "phases": [
+      "Prepare: Identify survey sites, establish baseline protocols, get permissions",
+      "Teach: Normal ecosystems unit + introduce biodiversity challenge",
+      "Live It: Interventions made, monthly surveys conducted and logged",
+      "Harvest: Compare baseline to final survey, celebrate biodiversity gains, share with local community"
+    ],
+    "pdf": "iMPACT_Pack_Biodiversity.pdf"
+  },
+  {
+    "id": 13,
+    "domain": "spaces",
+    "subject": "Design / I&S",
+    "unit": "Accessibility & Inclusion",
+    "title": "Making Inclusion Learning Matter",
+    "subtitle": "by Making a Real Space More Accessible",
+    "challenge": "Students identify a space that excludes someone, design and implement changes to make it more accessible, and prove — through that person's testimony — that they can now use it.",
+    "evidence": [
+      "Accessibility audit of chosen space (photos, observations, barriers identified)",
+      "Interview with person currently excluded or disadvantaged by the space",
+      "Design proposal for accessibility improvements",
+      "Implementation of changes (with permissions)",
+      "User testimony confirming improved access and experience",
+      "Reflection on inclusion, design for all, and what access really means"
+    ],
+    "window": "4–8 weeks",
+    "grading": "Medium — graded once changes are made and user confirms",
+    "ai": "High — real physical changes to real spaces with real user testimony",
+    "phases": [
+      "Prepare: Identify spaces and users, secure permissions from space owners",
+      "Teach: Normal accessibility/inclusion unit + introduce the space challenge",
+      "Live It: Audit, design, implement changes, collect user feedback",
+      "Harvest: Before/after documentation, user testimony, grade real access gained"
+    ],
+    "pdf": "iMPACT_Pack_Accessibility.pdf"
+  },
+  {
+    "id": 14,
+    "domain": "spaces",
+    "subject": "Science / Design",
+    "unit": "Sound & Acoustics",
+    "title": "Making Sound Learning Matter",
+    "subtitle": "by Making a Space Quieter and Keeping It That Way",
+    "challenge": "Students apply what they learn about sound to genuinely reduce noise levels in a specific space — classroom, corridor, home room, community area — and prove the reduction lasted.",
+    "evidence": [
+      "Baseline noise level measurements (dB readings over multiple days/times)",
+      "Noise source analysis and reduction plan",
+      "Intervention implemented (acoustic treatment, behaviour change, redesign)",
+      "Follow-up noise measurements showing sustained reduction",
+      "User feedback from people who use the space",
+      "Reflection on acoustics, intervention design, and wellbeing impact"
+    ],
+    "window": "4–6 weeks",
+    "grading": "Medium — before/after data with 2-week sustained check",
+    "ai": "High — dB meter readings are timestamped and location-specific",
+    "phases": [
+      "Prepare: Identify noisy spaces, source dB meter apps, get permissions",
+      "Teach: Normal sound/acoustics unit + introduce the noise challenge",
+      "Live It: Measurements taken, interventions designed and installed, follow-up readings",
+      "Harvest: Compare data, collect user feedback, grade sustained reduction"
+    ],
+    "pdf": "iMPACT_Pack_Sound_Acoustics.pdf"
+  },
+  {
+    "id": 15,
+    "domain": "spaces",
+    "subject": "Arts / Design / I&S",
+    "unit": "Community & Placemaking",
+    "title": "Making Placemaking Learning Matter",
+    "subtitle": "by Creating a Space People Actually Gather In",
+    "challenge": "Students create or transform a space — in school or community — into somewhere people actually want to gather, and prove with evidence that people are using it regularly.",
+    "evidence": [
+      "Identified underused or unwelcoming space with documentation",
+      "Community consultation (what do people want from this space?)",
+      "Design and implementation of transformation",
+      "Usage data over 4+ weeks (headcounts, photos at regular intervals)",
+      "Testimony from people who now use the space",
+      "Reflection on placemaking, community, and what makes a space feel welcoming"
+    ],
+    "window": "6–8 weeks",
+    "grading": "Medium — usage data collected over 4+ weeks post-transformation",
+    "ai": "High — physical transformation with usage headcounts over time",
+    "phases": [
+      "Prepare: Identify spaces, consult community, secure permissions and any budget",
+      "Teach: Normal unit on community, place, or design + introduce challenge",
+      "Live It: Space transformed, usage tracked weekly with photos and headcounts",
+      "Harvest: Present the transformation story, grade sustained usage, celebrate"
+    ],
+    "pdf": "iMPACT_Pack_Placemaking.pdf"
+  },
+  {
+    "id": 16,
+    "domain": "sustainability",
+    "subject": "Science / Maths",
+    "unit": "Water & Resources",
+    "title": "Making Water Learning Matter",
+    "subtitle": "by Reducing Household Water Consumption",
+    "challenge": "Students reduce their household's water usage through sustained behaviour change and practical interventions, evidenced by real utility data showing the reduction lasted.",
+    "evidence": [
+      "Baseline water bills or meter readings (4+ weeks)",
+      "Water-saving action plan created with household",
+      "Weekly behaviour log (changes made, challenges faced)",
+      "Impact data showing sustained reduction over 8+ weeks",
+      "Household voice statement on what changed",
+      "Reflection connecting water science to lived experience"
+    ],
+    "window": "8–12 weeks",
+    "grading": "Delayed (next term possible)",
+    "ai": "High — utility data is timestamped and issued by provider",
+    "phases": [
+      "Prepare: Parent letter, identify water data sources (bills, meters, apps)",
+      "Teach: Normal water/resources unit + introduce challenge",
+      "Live It: Changes implemented, data collected weekly in background",
+      "Harvest: Calculate litres saved individually and as class, grade impact, celebrate"
+    ],
+    "pdf": "iMPACT_Pack_Water_Conservation.pdf"
+  },
+  {
+    "id": 17,
+    "domain": "sustainability",
+    "subject": "Science / Design / Maths",
+    "unit": "Waste & Materials",
+    "title": "Making Waste Learning Matter",
+    "subtitle": "by Measurably Reducing Household Food Waste",
+    "challenge": "Students measure, reduce, and sustain a reduction in their household's food waste over months — proving with weighed data that less food is being thrown away.",
+    "evidence": [
+      "Baseline waste audit (weighed food waste daily for 2 weeks)",
+      "Waste reduction action plan (meal planning, storage, composting, shopping habits)",
+      "Weekly waste measurement log with photos",
+      "Impact data showing sustained reduction over 8+ weeks",
+      "Household voice statement",
+      "Reflection on waste, consumption, and what sustainability means at home"
+    ],
+    "window": "8–12 weeks",
+    "grading": "Delayed",
+    "ai": "High — weekly weighed waste photos are personal and timestamped",
+    "phases": [
+      "Prepare: Parent letter, provide or source kitchen scales, establish weighing method",
+      "Teach: Normal waste/materials unit + introduce challenge",
+      "Live It: Weekly weigh-ins, strategies adjusted, log builds in background",
+      "Harvest: Calculate kg saved, share collective impact, grade sustained reduction"
+    ],
+    "pdf": "iMPACT_Pack_Food_Waste.pdf"
+  },
+  {
+    "id": 18,
+    "domain": "sustainability",
+    "subject": "Science / I&S / Maths",
+    "unit": "Transport & Emissions",
+    "title": "Making Transport Learning Matter",
+    "subtitle": "by Shifting Your Household to More Sustainable Travel",
+    "challenge": "Students work with their household to shift travel habits toward more sustainable modes — walking, cycling, public transport, carpooling — and prove with sustained data that the shift lasted.",
+    "evidence": [
+      "Baseline transport log (2 weeks — every journey, mode, distance)",
+      "Transport action plan identifying realistic shifts",
+      "Weekly transport log showing changed modes over 8+ weeks",
+      "Estimated emissions comparison (baseline vs impact period)",
+      "Household voice on what changed and how it felt",
+      "Reflection on transport, emissions, and sustainable choices"
+    ],
+    "window": "8–12 weeks",
+    "grading": "Delayed",
+    "ai": "High — daily transport logs with routes are personal and verifiable",
+    "phases": [
+      "Prepare: Parent letter, provide transport log template, discuss what's realistic per household",
+      "Teach: Normal transport/emissions unit + introduce challenge",
+      "Live It: Households shift modes, weekly logs build, brief check-ins",
+      "Harvest: Calculate km shifted and emissions saved, grade sustained change, celebrate"
+    ],
+    "pdf": "iMPACT_Pack_Transport_Emissions.pdf"
+  },
+  {
+    "id": 19,
+    "domain": "sustainability",
+    "subject": "Design / Science",
+    "unit": "Materials & Sustainability",
+    "title": "Making Materials Learning Matter",
+    "subtitle": "by Repairing and Upcycling Instead of Replacing",
+    "challenge": "Students commit to repairing or upcycling items instead of replacing them — and prove with a portfolio of saved items that they changed their household's relationship with stuff.",
+    "evidence": [
+      "Baseline consumption snapshot (what the household typically throws away or replaces)",
+      "Repair/upcycle commitment plan",
+      "Portfolio of repaired or upcycled items with before/after photos and descriptions",
+      "Estimated waste diverted (weight or item count)",
+      "Household voice on how attitudes to 'stuff' changed",
+      "Reflection on materials, consumption, and what sustainability means in practice"
+    ],
+    "window": "6–10 weeks",
+    "grading": "Medium — portfolio builds over weeks, graded once substantial",
+    "ai": "High — physical before/after photos of real repaired items",
+    "phases": [
+      "Prepare: Parent letter, source basic repair tools/materials if possible, connect with local repair cafes",
+      "Teach: Normal materials/sustainability unit + introduce repair challenge",
+      "Live It: Students repair, upcycle, document — portfolio grows over weeks",
+      "Harvest: Repair exhibition, calculate waste diverted, grade portfolio and sustained habit change"
+    ],
+    "pdf": "iMPACT_Pack_Repair_Upcycle.pdf"
+  },
+  {
+    "id": 20,
+    "domain": "sustainability",
+    "subject": "I&S / Maths / Design",
+    "unit": "Economics & Enterprise",
+    "title": "Making Business Learning Matter",
+    "subtitle": "by Running an Ethical Enterprise That Benefits Its Community",
+    "challenge": "Students create and run a real micro-business or social enterprise that is ethical, sustainable, and demonstrably benefits its community — with evidence it sustained beyond the first week.",
+    "evidence": [
+      "Business plan with ethical and sustainability commitments",
+      "Evidence of operation (sales records, service logs, customer interactions)",
+      "Community benefit documented (who was helped, what changed)",
+      "Customer/community testimony",
+      "Financial records showing viability over 6+ weeks",
+      "Reflection on ethical business, sustainability, and what 'benefit' really means"
+    ],
+    "window": "6–10 weeks",
+    "grading": "Medium — graded once enterprise shows sustained operation and benefit",
+    "ai": "High — real customers, real transactions, real community testimony",
+    "phases": [
+      "Prepare: Permissions, scope appropriate enterprises, ethical guidelines, financial oversight",
+      "Teach: Normal economics/enterprise unit + launch real businesses",
+      "Live It: Enterprises operate over 6+ weeks, data collected, community impact tracked",
+      "Harvest: Enterprise fair, share impact stories, grade sustained benefit and ethical practice"
+    ],
+    "pdf": "iMPACT_Pack_Ethical_Business.pdf"
+  }
+]
