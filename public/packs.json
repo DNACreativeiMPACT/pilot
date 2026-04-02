@@ -51,7 +51,7 @@
       "Live It: Students cook, shop, plan — weekly logs build in background",
       "Harvest: Share recipes and stories, grade sustained change, celebrate"
     ],
-    "pdf": "iMPACT_Pack_Nutrition.pdf"
+    "pdf": "iMPACT_Pack_Nutrition_Health.pdf"
   },
   {
     "id": 3,
@@ -78,7 +78,7 @@
       "Live It: Students train independently, log data, reassess monthly",
       "Harvest: Final assessments, celebrate personal bests and sustained commitment"
     ],
-    "pdf": "iMPACT_Pack_Fitness.pdf"
+    "pdf": "iMPACT_Pack_Fitness_Body_Systems.pdf"
   },
   {
     "id": 4,
@@ -104,7 +104,7 @@
       "Live It: Students track, adjust, and sustain new habits in background",
       "Harvest: Share strategies (never amounts), celebrate discipline and growth"
     ],
-    "pdf": "iMPACT_Pack_Financial_Literacy.pdf"
+    "pdf": ""
   },
   {
     "id": 5,
@@ -130,7 +130,7 @@
       "Live It: Students implement changes, weekly screen time screenshots build portfolio",
       "Harvest: Share strategies, grade sustained change, celebrate healthier habits"
     ],
-    "pdf": "iMPACT_Pack_Digital_Wellness.pdf"
+    "pdf": ""
   },
   {
     "id": 6,
@@ -155,7 +155,7 @@
       "Live It: Letters sent, follow-ups tracked, responses collected over 4–8 weeks",
       "Harvest: Share outcomes, grade the real-world result, celebrate every response"
     ],
-    "pdf": "iMPACT_Pack_Persuasive_Writing.pdf"
+    "pdf": ""
   },
   {
     "id": 7,
@@ -182,7 +182,7 @@
       "Live It: Students teach, document, iterate over 3–6 weeks",
       "Harvest: Showcase learner outcomes, celebrate skill transfer"
     ],
-    "pdf": "iMPACT_Pack_Teaching_a_Skill.pdf"
+    "pdf": ""
   },
   {
     "id": 8,
@@ -208,7 +208,7 @@
       "Live It: Regular communication sustained over weeks, logged and reflected on",
       "Harvest: Share stories of connection, celebrate relationships built"
     ],
-    "pdf": "iMPACT_Pack_Cross_Cultural_Relationship.pdf"
+    "pdf": ""
   },
   {
     "id": 9,
@@ -234,7 +234,7 @@
       "Live It: Students collect data, analyse, present to their decision-maker",
       "Harvest: Decision-maker feedback collected, grade the real-world contribution"
     ],
-    "pdf": "iMPACT_Pack_Data_for_Decisions.pdf"
+    "pdf": ""
   },
   {
     "id": 10,
@@ -261,7 +261,7 @@
       "Live It: Work created, rehearsed, performed/exhibited to real audience",
       "Harvest: Survey data analysed, grade the measured shift, celebrate impact"
     ],
-    "pdf": "iMPACT_Pack_Arts_Social_Issue.pdf"
+    "pdf": ""
   },
   {
     "id": 11,
@@ -288,7 +288,7 @@
       "Live It: Product delivered, check-ins with user at 2 and 6 weeks",
       "Harvest: User testimony collected, grade real-world usefulness, celebrate"
     ],
-    "pdf": "iMPACT_Pack_Product_Design.pdf"
+    "pdf": ""
   },
   {
     "id": 12,
@@ -315,7 +315,7 @@
       "Live It: Interventions made, monthly surveys conducted and logged",
       "Harvest: Compare baseline to final survey, celebrate biodiversity gains, share with local community"
     ],
-    "pdf": "iMPACT_Pack_Biodiversity.pdf"
+    "pdf": ""
   },
   {
     "id": 13,
@@ -342,7 +342,7 @@
       "Live It: Audit, design, implement changes, collect user feedback",
       "Harvest: Before/after documentation, user testimony, grade real access gained"
     ],
-    "pdf": "iMPACT_Pack_Accessibility.pdf"
+    "pdf": ""
   },
   {
     "id": 14,
@@ -396,7 +396,7 @@
       "Live It: Space transformed, usage tracked weekly with photos and headcounts",
       "Harvest: Present the transformation story, grade sustained usage, celebrate"
     ],
-    "pdf": "iMPACT_Pack_Placemaking.pdf"
+    "pdf": ""
   },
   {
     "id": 16,
@@ -423,7 +423,7 @@
       "Live It: Changes implemented, data collected weekly in background",
       "Harvest: Calculate litres saved individually and as class, grade impact, celebrate"
     ],
-    "pdf": "iMPACT_Pack_Water_Conservation.pdf"
+    "pdf": ""
   },
   {
     "id": 17,
@@ -450,7 +450,7 @@
       "Live It: Weekly weigh-ins, strategies adjusted, log builds in background",
       "Harvest: Calculate kg saved, share collective impact, grade sustained reduction"
     ],
-    "pdf": "iMPACT_Pack_Food_Waste.pdf"
+    "pdf": ""
   },
   {
     "id": 18,
@@ -477,7 +477,7 @@
       "Live It: Households shift modes, weekly logs build, brief check-ins",
       "Harvest: Calculate km shifted and emissions saved, grade sustained change, celebrate"
     ],
-    "pdf": "iMPACT_Pack_Transport_Emissions.pdf"
+    "pdf": ""
   },
   {
     "id": 19,
@@ -504,7 +504,7 @@
       "Live It: Students repair, upcycle, document — portfolio grows over weeks",
       "Harvest: Repair exhibition, calculate waste diverted, grade portfolio and sustained habit change"
     ],
-    "pdf": "iMPACT_Pack_Repair_Upcycle.pdf"
+    "pdf": ""
   },
   {
     "id": 20,
@@ -531,6 +531,6 @@
       "Live It: Enterprises operate over 6+ weeks, data collected, community impact tracked",
       "Harvest: Enterprise fair, share impact stories, grade sustained benefit and ethical practice"
     ],
-    "pdf": "iMPACT_Pack_Ethical_Business.pdf"
+    "pdf": ""
   }
 ]
