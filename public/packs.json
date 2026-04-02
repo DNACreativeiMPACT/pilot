@@ -533,4 +533,31 @@
     ],
     "pdf": "iMPACT_Pack_Ethical_Business.pdf"
   }
+    {
+    "id": 21,
+    "domain": "self",
+    "subject": "I&S / Maths / Design",
+    "unit": "Testing Updates",
+    "title": "Making Business Learning Matter",
+    "subtitle": "by Running an Ethical Enterprise That Benefits Its Community",
+    "challenge": "Students create and run a real micro-business or social enterprise that is ethical, sustainable, and demonstrably benefits its community — with evidence it sustained beyond the first week.",
+    "evidence": [
+      "Business plan with ethical and sustainability commitments",
+      "Evidence of operation (sales records, service logs, customer interactions)",
+      "Community benefit documented (who was helped, what changed)",
+      "Customer/community testimony",
+      "Financial records showing viability over 6+ weeks",
+      "Reflection on ethical business, sustainability, and what 'benefit' really means"
+    ],
+    "window": "6–10 weeks",
+    "grading": "Medium — graded once enterprise shows sustained operation and benefit",
+    "ai": "High — real customers, real transactions, real community testimony",
+    "phases": [
+      "Prepare: Permissions, scope appropriate enterprises, ethical guidelines, financial oversight",
+      "Teach: Normal economics/enterprise unit + launch real businesses",
+      "Live It: Enterprises operate over 6+ weeks, data collected, community impact tracked",
+      "Harvest: Enterprise fair, share impact stories, grade sustained benefit and ethical practice"
+    ],
+    "pdf": "iMPACT_Pack_Ethical_Business.pdf"
+  }
 ]
