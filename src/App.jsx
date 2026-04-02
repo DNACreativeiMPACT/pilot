@@ -229,9 +229,9 @@ function PackPreview({ pack, onClose }) {
         </div>
 
       {/* Download button */}
-        <div style={{ padding: "0 36px 28px" }}>
-         {pack.pdf && pack.pdf.length > 0 ? 
-            <>
+       <div style={{ padding: "0 36px 28px" }}>
+          {pack.pdf && pack.pdf.length > 0 ? (
+            <div>
               
                 href={pack.paywall_url || `/packs/${pack.pdf}`}
                 download={!pack.paywall_url ? true : undefined}
@@ -256,7 +256,7 @@ function PackPreview({ pack, onClose }) {
               <p style={{ textAlign: "center", fontSize: 11, color: C.midGray, margin: "10px 0 0", fontFamily: "system-ui" }}>
                 Includes: Challenge · Evidence Guide · Rubric · Teacher Setup · FAQ · Parent Letter
               </p>
-            </>
+            </div>
           ) : (
             <div style={{
               width: "100%", padding: "16px 24px",
@@ -272,7 +272,6 @@ function PackPreview({ pack, onClose }) {
             </div>
           )}
         </div>
-
         {/* Footer */}
         <div style={{
           background: C.navy, padding: "20px 36px",
