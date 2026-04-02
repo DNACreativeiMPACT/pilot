@@ -230,7 +230,7 @@ function PackPreview({ pack, onClose }) {
 
       {/* Download button */}
         <div style={{ padding: "0 36px 28px" }}>
-          {pack.pdf ? (
+         {pack.pdf && pack.pdf.length > 0 ? (
             <>
               
                 href={pack.paywall_url || `/packs/${pack.pdf}`}
