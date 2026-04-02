@@ -678,7 +678,7 @@ function PDPage() {
                 All sessions can be delivered in-person or virtually, and tailored to your school context.
               </p>
               <a
-                href="mailto:hello@dnacreative.co?subject=iMPACT%20PD%20Enquiry"
+                href="mailto:danny@lalasoa.org?subject=iMPACT%20PD%20Enquiry"
                 style={{
                   display: "inline-block", padding: "14px 36px",
                   background: C.orange, color: C.white, borderRadius: 10,
