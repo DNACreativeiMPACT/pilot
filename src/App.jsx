@@ -228,38 +228,50 @@ function PackPreview({ pack, onClose }) {
           })}
         </div>
 
-        {/* Download button */}
-        {pack.pdf && (
-          <div style={{ padding: "0 36px 28px" }}>
-            <a
-              href={pack.paywall_url || `/packs/${pack.pdf}`}
-              download={!pack.paywall_url ? true : undefined}
-              target={pack.paywall_url ? "_blank" : undefined}
-              rel={pack.paywall_url ? "noopener noreferrer" : undefined}
-              onClick={e => e.stopPropagation()}
-              style={{
-                display: "flex", alignItems: "center", justifyContent: "center", gap: 10,
-                width: "100%", padding: "16px 24px",
-                background: domain.color, color: C.white,
-                borderRadius: 10, textDecoration: "none",
-                fontFamily: "'Libre Baskerville', Georgia, serif",
-                fontSize: 15, fontWeight: 700, letterSpacing: 0.5,
-                transition: "opacity 0.2s", cursor: "pointer",
-              }}
-              onMouseEnter={e => e.currentTarget.style.opacity = "0.85"}
-              onMouseLeave={e => e.currentTarget.style.opacity = "1"}
-            >
-              <span style={{ fontSize: 18 }}>{pack.paywall_url ? "→" : "↓"}</span>
-              {pack.paywall_url ? "Get This iMPACT Pack" : "Download Full iMPACT Pack (PDF)"}
-            </a>
-            <p style={{
-              textAlign: "center", fontSize: 11, color: C.midGray,
-              margin: "10px 0 0", fontFamily: "system-ui",
+      {/* Download button */}
+        <div style={{ padding: "0 36px 28px" }}>
+          {pack.pdf ? (
+            <>
+              
+                href={pack.paywall_url || `/packs/${pack.pdf}`}
+                download={!pack.paywall_url ? true : undefined}
+                target={pack.paywall_url ? "_blank" : undefined}
+                rel={pack.paywall_url ? "noopener noreferrer" : undefined}
+                onClick={e => e.stopPropagation()}
+                style={{
+                  display: "flex", alignItems: "center", justifyContent: "center", gap: 10,
+                  width: "100%", padding: "16px 24px",
+                  background: domain.color, color: C.white,
+                  borderRadius: 10, textDecoration: "none",
+                  fontFamily: "'Libre Baskerville', Georgia, serif",
+                  fontSize: 15, fontWeight: 700, letterSpacing: 0.5,
+                  transition: "opacity 0.2s", cursor: "pointer",
+                }}
+                onMouseEnter={e => e.currentTarget.style.opacity = "0.85"}
+                onMouseLeave={e => e.currentTarget.style.opacity = "1"}
+              >
+                <span style={{ fontSize: 18 }}>{pack.paywall_url ? "→" : "↓"}</span>
+                {pack.paywall_url ? "Get This iMPACT Pack" : "Download Full iMPACT Pack (PDF)"}
+              </a>
+              <p style={{ textAlign: "center", fontSize: 11, color: C.midGray, margin: "10px 0 0", fontFamily: "system-ui" }}>
+                Includes: Challenge · Evidence Guide · Rubric · Teacher Setup · FAQ · Parent Letter
+              </p>
+            </>
+          ) : (
+            <div style={{
+              width: "100%", padding: "16px 24px",
+              background: C.warmGray, borderRadius: 10,
+              textAlign: "center",
             }}>
-              Includes: Challenge · Evidence Guide · Rubric · Teacher Setup · FAQ · Parent Letter
-            </p>
-          </div>
-        )}
+              <p style={{ fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 15, fontWeight: 700, color: C.midGray, margin: "0 0 4px" }}>
+                Coming Soon
+              </p>
+              <p style={{ fontSize: 11, color: C.midGray, margin: 0, fontFamily: "system-ui" }}>
+                This iMPACT Pack is in development
+              </p>
+            </div>
+          )}
+        </div>
 
         {/* Footer */}
         <div style={{
