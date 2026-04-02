@@ -533,29 +533,4 @@
     ],
     "pdf": "iMPACT_Pack_Ethical_Business.pdf"
   }
-  {
-    "id": 21,
-    "domain": "self",
-    "subject": "I&S / PHE / SCIENCE",
-    "unit": "Habit Stacking",
-    "title": "Making Choices Stick",
-    "subtitle": "by tracking how my actions can be sustained through habit-stacking",
-    "challenge": "Students determine a positive change they can make in their own life for their physical health and use psychology to track how to adjust their own habits to make them stick.",
-    "evidence": [
-      "Habit trackers",
-      "Evidence of habitual uptake",
-      "iMPACT of their change on their life being visible through data",
-      "Family/community testimony"
-    ],
-    "window": "10-12 weeks",
-    "grading": "Medium — graded once habits shows sustained application",
-    "ai": "High — AI cannot act on their behalf or change their behaviours directly",
-    "phases": [
-      "Prepare: Permissions, case studies of habit pscyhology, identifying personal goals",
-      "Teach: Normal pysch/PHE unit + plan habit change",
-      "Live It: Attempt to change their own behaviours",
-      "Harvest: Habit trackers and celebrations of personal achievements"
-    ],
-    "pdf": "iMPACT_Pack_Habitual_Change.pdf"
-  }
 ]
