@@ -233,7 +233,7 @@ function PackPreview({ pack, onClose }) {
           {pack.pdf && pack.pdf.length > 0 ? (
             <div>
               
-                href={pack.paywall_url || `/packs/${pack.pdf}`}
+                <a></a>href={pack.paywall_url || `/packs/${pack.pdf}`}
                 download={!pack.paywall_url ? true : undefined}
                 target={pack.paywall_url ? "_blank" : undefined}
                 rel={pack.paywall_url ? "noopener noreferrer" : undefined}
