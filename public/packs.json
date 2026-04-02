@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "domain": "sustainability",
+    "domain": "self",
     "subject": "Science",
     "unit": "Energy & Electricity",
     "title": "Making Energy Learning Matter",
@@ -267,28 +267,28 @@
     "id": 11,
     "domain": "spaces",
     "subject": "Design",
-    "unit": "Noise Pollution",
-    "title": "Making a Noise Matter",
-    "subtitle": "by Creating Noise That Has Purpose",
-    "challenge": "Students investigate the appropriate noise levels for an area and purpose before designing and launching a campaign that leads to those noise levels on a more regular basis",
+    "unit": "Product Design",
+    "title": "Making Design Learning Matter",
+    "subtitle": "by Creating Something Someone Actually Uses",
+    "challenge": "Students design and make a product that solves a real problem for a real person — and the grade comes from whether that person is still using it weeks later.",
     "evidence": [
-      "Identified space and its genuine need (interview/observation)",
+      "Identified user and their genuine need (interview/observation)",
       "Design process documentation (iterations, prototyping, testing)",
-      "Finished campaign delivered to user",
-      "Feedback at 2 weeks and 6 weeks post-delivery",
-      "Usage evidence (photos of space in use, user testimony)",
+      "Finished product delivered to user",
+      "User feedback at 2 weeks and 6 weeks post-delivery",
+      "Usage evidence (photos of product in use, testimony)",
       "Reflection on the design process and what 'useful' really means"
     ],
     "window": "6–8 weeks post-delivery",
     "grading": "Medium — first check at 2 weeks, final grade at 6 weeks",
-    "ai": "High — real user testimony over time about experience in a physical space",
+    "ai": "High — real user testimony over time about a physical product",
     "phases": [
-      "Prepare: Identify real spaces with real needs in school or community",
-      "Teach: Normal design unit on noise pollution or sound + build for the real user throughout",
+      "Prepare: Identify real users with real needs in school or community",
+      "Teach: Normal design unit + build for the real user throughout",
       "Live It: Product delivered, check-ins with user at 2 and 6 weeks",
       "Harvest: User testimony collected, grade real-world usefulness, celebrate"
     ],
-    "pdf": "iMPACT_Pack_Noise_Pollution.pdf"
+    "pdf": "iMPACT_Pack_Product_Design.pdf"
   },
   {
     "id": 12,
