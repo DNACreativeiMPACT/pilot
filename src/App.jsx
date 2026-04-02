@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 
-// DNACreative palette
 const C = {
   navy: "#1B2A4A",
   orange: "#F28C28",
@@ -22,8 +21,6 @@ const domains = {
   sustainability: { label: "Sustainability", color: C.lime, icon: "◇" },
 };
 
-// ─── Shared Components ──────────────────────────────────────────────────────
-
 function Dots({ color, count = 5, area = "topright" }) {
   const dotsRef = useRef(null);
   if (!dotsRef.current) {
@@ -40,12 +37,9 @@ function Dots({ color, count = 5, area = "topright" }) {
     <div style={{ position: "absolute", inset: 0, pointerEvents: "none", overflow: "hidden" }}>
       {dotsRef.current.map(d => (
         <div key={d.key} style={{
-          position: "absolute",
-          left: `${d.x}%`, top: `${d.y}%`,
-          width: d.size, height: d.size,
-          borderRadius: "50%",
-          backgroundColor: color,
-          opacity: d.opacity,
+          position: "absolute", left: d.x + "%", top: d.y + "%",
+          width: d.size, height: d.size, borderRadius: "50%",
+          backgroundColor: color, opacity: d.opacity,
         }} />
       ))}
     </div>
@@ -56,14 +50,11 @@ function NavBar({ page, onNav }) {
   return (
     <div style={{
       background: C.navy, padding: "0 32px",
-      display: "flex", alignItems: "center", gap: 0,
+      display: "flex", alignItems: "center",
       borderBottom: "1px solid rgba(255,255,255,0.08)",
       position: "sticky", top: 0, zIndex: 200,
     }}>
-      <div
-        onClick={() => onNav("packs")}
-        style={{ cursor: "pointer", padding: "14px 0", marginRight: 32, display: "flex", alignItems: "baseline", gap: 2 }}
-      >
+      <div onClick={() => onNav("packs")} style={{ cursor: "pointer", padding: "14px 0", marginRight: 32, display: "flex", alignItems: "baseline", gap: 2 }}>
         <span style={{ fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 20, color: C.orange }}>i</span>
         <span style={{ fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 20, color: C.white, fontWeight: 700 }}>MPACT</span>
       </div>
@@ -71,24 +62,19 @@ function NavBar({ page, onNav }) {
         { key: "packs", label: "Assessment Packs" },
         { key: "pd", label: "Professional Development" },
       ].map(item => (
-        <div
-          key={item.key}
-          onClick={() => onNav(item.key)}
-          style={{
-            padding: "14px 20px",
-            fontFamily: "system-ui", fontSize: 13, fontWeight: 600,
-            color: page === item.key ? C.white : "rgba(255,255,255,0.5)",
-            borderBottom: page === item.key ? `2px solid ${C.orange}` : "2px solid transparent",
-            cursor: "pointer", transition: "all 0.2s",
-            marginBottom: -1,
-          }}
-        >{item.label}</div>
+        <div key={item.key} onClick={() => onNav(item.key)} style={{
+          padding: "14px 20px",
+          fontFamily: "system-ui", fontSize: 13, fontWeight: 600,
+          color: page === item.key ? C.white : "rgba(255,255,255,0.5)",
+          borderBottom: page === item.key ? "2px solid " + C.orange : "2px solid transparent",
+          cursor: "pointer", transition: "all 0.2s", marginBottom: -1,
+        }}>{item.label}</div>
       ))}
     </div>
   );
 }
 
-function Footer() {
+function SiteFooter() {
   return (
     <div style={{ background: C.navy, padding: "32px 32px", textAlign: "center" }}>
       <div style={{ marginBottom: 8 }}>
@@ -96,16 +82,65 @@ function Footer() {
         <span style={{ fontSize: 20, color: C.white, fontWeight: 700 }}>MPACT</span>
         <span style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", marginLeft: 10 }}>Making Learning Matter</span>
       </div>
-     <p style={{ fontSize: 12, color: "rgba(255,255,255,0.35)", margin: 0, fontFamily: "system-ui" }}>A DNACreative product · <a href="https://dnaedu.org" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>dnaedu.org</a></p>
+      <p style={{ fontSize: 12, color: "rgba(255,255,255,0.35)", margin: 0, fontFamily: "system-ui" }}>A DNACreative product · <a href="https://dnaedu.org" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>dnaedu.org</a></p>
     </div>
   );
 }
 
-// ─── Pack Preview Modal ─────────────────────────────────────────────────────
+function DownloadButton({ pack, domainColor }) {
+  var hasPdf = pack.pdf && pack.pdf.length > 0;
+
+  if (hasPdf) {
+    return (
+      <div style={{ padding: "0 36px 28px" }}>
+        <a
+          href={pack.paywall_url || ("/packs/" + pack.pdf)}
+          download={!pack.paywall_url ? true : undefined}
+          target={pack.paywall_url ? "_blank" : undefined}
+          rel={pack.paywall_url ? "noopener noreferrer" : undefined}
+          onClick={function(e) { e.stopPropagation(); }}
+          style={{
+            display: "flex", alignItems: "center", justifyContent: "center", gap: 10,
+            width: "100%", padding: "16px 24px",
+            background: domainColor, color: C.white,
+            borderRadius: 10, textDecoration: "none",
+            fontFamily: "'Libre Baskerville', Georgia, serif",
+            fontSize: 15, fontWeight: 700, letterSpacing: 0.5,
+            transition: "opacity 0.2s", cursor: "pointer",
+          }}
+          onMouseEnter={function(e) { e.currentTarget.style.opacity = "0.85"; }}
+          onMouseLeave={function(e) { e.currentTarget.style.opacity = "1"; }}
+        >
+          <span style={{ fontSize: 18 }}>{pack.paywall_url ? "→" : "↓"}</span>
+          {pack.paywall_url ? "Get This iMPACT Pack" : "Download Full iMPACT Pack (PDF)"}
+        </a>
+        <p style={{ textAlign: "center", fontSize: 11, color: C.midGray, margin: "10px 0 0", fontFamily: "system-ui" }}>
+          Includes: Challenge · Evidence Guide · Rubric · Teacher Setup · FAQ · Parent Letter
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div style={{ padding: "0 36px 28px" }}>
+      <div style={{
+        width: "100%", padding: "16px 24px",
+        background: C.warmGray, borderRadius: 10, textAlign: "center",
+      }}>
+        <p style={{ fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 15, fontWeight: 700, color: C.midGray, margin: "0 0 4px" }}>
+          Coming Soon
+        </p>
+        <p style={{ fontSize: 11, color: C.midGray, margin: 0, fontFamily: "system-ui" }}>
+          This iMPACT Pack is in development
+        </p>
+      </div>
+    </div>
+  );
+}
 
 function PackPreview({ pack, onClose }) {
-  const domain = domains[pack.domain];
-  const isFree = pack.access === "free";
+  var domain = domains[pack.domain];
+  var isFree = pack.access === "free";
 
   return (
     <div style={{
@@ -114,36 +149,31 @@ function PackPreview({ pack, onClose }) {
       display: "flex", alignItems: "flex-start", justifyContent: "center",
       padding: "24px 16px", overflowY: "auto",
     }} onClick={onClose}>
-      <div onClick={e => e.stopPropagation()} style={{
+      <div onClick={function(e) { e.stopPropagation(); }} style={{
         width: "100%", maxWidth: 720,
         background: C.cream, borderRadius: 16,
         overflow: "hidden", position: "relative",
         boxShadow: "0 24px 80px rgba(27,42,74,0.3)",
         marginBottom: 40,
       }}>
-        {/* Cover section */}
         <div style={{
-          background: `linear-gradient(135deg, ${C.navy} 0%, ${C.navy}ee 100%)`,
+          background: "linear-gradient(135deg, " + C.navy + " 0%, " + C.navy + "ee 100%)",
           padding: "40px 36px 32px", position: "relative", overflow: "hidden",
         }}>
           <Dots color={domain.color} count={12} area="all" />
           <div style={{ display: "flex", gap: 8, marginBottom: 20 }}>
-            <div style={{
-              display: "inline-block", padding: "4px 16px", borderRadius: 20,
-              background: domain.color,
-            }}>
+            <div style={{ display: "inline-block", padding: "4px 16px", borderRadius: 20, background: domain.color }}>
               <span style={{ color: C.white, fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 12, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase" }}>
                 {domain.label}
               </span>
             </div>
-            <div style={{
-              display: "inline-block", padding: "4px 14px", borderRadius: 20,
-              background: isFree ? C.lime : "rgba(255,255,255,0.15)",
-            }}>
-              <span style={{ color: C.white, fontFamily: "system-ui", fontSize: 11, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase" }}>
-                {isFree ? "Free" : "Premium"}
-              </span>
-            </div>
+            {pack.access && (
+              <div style={{ display: "inline-block", padding: "4px 14px", borderRadius: 20, background: isFree ? C.lime : "rgba(255,255,255,0.15)" }}>
+                <span style={{ color: C.white, fontFamily: "system-ui", fontSize: 11, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase" }}>
+                  {isFree ? "Free" : "Premium"}
+                </span>
+              </div>
+            )}
           </div>
           <div style={{ position: "relative", zIndex: 1 }}>
             <div style={{ marginBottom: 4 }}>
@@ -160,57 +190,59 @@ function PackPreview({ pack, onClose }) {
           </div>
         </div>
 
-        {/* Challenge callout */}
         <div style={{ padding: "28px 36px 0" }}>
-          <div style={{ borderLeft: `4px solid ${C.orange}`, paddingLeft: 20, margin: "0 0 28px" }}>
+          <div style={{ borderLeft: "4px solid " + C.orange, paddingLeft: 20, margin: "0 0 28px" }}>
             <p style={{ fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 15, color: C.navy, lineHeight: 1.6, margin: 0, fontStyle: "italic" }}>
               {pack.challenge}
             </p>
           </div>
         </div>
 
-        {/* Quick info bar */}
         <div style={{ display: "flex", gap: 1, margin: "0 36px 28px", borderRadius: 10, overflow: "hidden" }}>
           {[
             { label: "Evidence Window", value: pack.window, color: C.orange },
             { label: "Grading", value: pack.grading, color: C.navy },
             { label: "AI Integrity", value: pack.ai, color: C.purple },
-          ].map((item, i) => (
-            <div key={i} style={{ flex: 1, background: C.warmGray, padding: "14px 14px" }}>
-              <div style={{ fontSize: 10, color: C.midGray, textTransform: "uppercase", letterSpacing: 1, marginBottom: 4, fontFamily: "system-ui" }}>{item.label}</div>
-              <div style={{ fontSize: 13, color: item.color, fontWeight: 700, fontFamily: "'Libre Baskerville', Georgia, serif", lineHeight: 1.3 }}>{item.value}</div>
-            </div>
-          ))}
+          ].map(function(item, i) {
+            return (
+              <div key={i} style={{ flex: 1, background: C.warmGray, padding: "14px 14px" }}>
+                <div style={{ fontSize: 10, color: C.midGray, textTransform: "uppercase", letterSpacing: 1, marginBottom: 4, fontFamily: "system-ui" }}>{item.label}</div>
+                <div style={{ fontSize: 13, color: item.color, fontWeight: 700, fontFamily: "'Libre Baskerville', Georgia, serif", lineHeight: 1.3 }}>{item.value}</div>
+              </div>
+            );
+          })}
         </div>
 
-        {/* Evidence section */}
         <div style={{ padding: "0 36px 28px" }}>
-          <h3 style={{ fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 16, color: C.navy, fontWeight: 700, margin: "0 0 14px", borderBottom: `2px solid ${C.warmGray}`, paddingBottom: 8 }}>
+          <h3 style={{ fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 16, color: C.navy, fontWeight: 700, margin: "0 0 14px", borderBottom: "2px solid " + C.warmGray, paddingBottom: 8 }}>
             Evidence Portfolio
           </h3>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
-            {pack.evidence.map((item, i) => (
-              <div key={i} style={{
-                display: "flex", alignItems: "flex-start", gap: 10, padding: "10px 14px",
-                background: i % 2 === 0 ? C.warmGray + "88" : "transparent", borderRadius: 8,
-              }}>
-                <div style={{ width: 22, height: 22, borderRadius: "50%", border: `2px solid ${domain.color}`, flexShrink: 0, marginTop: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <span style={{ fontSize: 10, color: domain.color, fontWeight: 700 }}>{i + 1}</span>
+            {pack.evidence.map(function(item, i) {
+              return (
+                <div key={i} style={{
+                  display: "flex", alignItems: "flex-start", gap: 10, padding: "10px 14px",
+                  background: i % 2 === 0 ? C.warmGray + "88" : "transparent", borderRadius: 8,
+                }}>
+                  <div style={{ width: 22, height: 22, borderRadius: "50%", border: "2px solid " + domain.color, flexShrink: 0, marginTop: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <span style={{ fontSize: 10, color: domain.color, fontWeight: 700 }}>{i + 1}</span>
+                  </div>
+                  <span style={{ fontSize: 13, color: C.darkText, lineHeight: 1.4, fontFamily: "'Libre Baskerville', Georgia, serif" }}>{item}</span>
                 </div>
-                <span style={{ fontSize: 13, color: C.darkText, lineHeight: 1.4, fontFamily: "'Libre Baskerville', Georgia, serif" }}>{item}</span>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
-        {/* Phases section */}
         <div style={{ padding: "0 36px 32px" }}>
-          <h3 style={{ fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 16, color: C.navy, fontWeight: 700, margin: "0 0 14px", borderBottom: `2px solid ${C.warmGray}`, paddingBottom: 8 }}>
+          <h3 style={{ fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 16, color: C.navy, fontWeight: 700, margin: "0 0 14px", borderBottom: "2px solid " + C.warmGray, paddingBottom: 8 }}>
             Teacher Journey
           </h3>
-          {pack.phases.map((phase, i) => {
-            const [name, desc] = phase.split(": ");
-            const phaseColors = [C.cyan, C.orange, C.lime, C.purple];
+          {pack.phases.map(function(phase, i) {
+            var parts = phase.split(": ");
+            var name = parts[0];
+            var desc = parts.slice(1).join(": ");
+            var phaseColors = [C.cyan, C.orange, C.lime, C.purple];
             return (
               <div key={i} style={{ display: "flex", gap: 14, marginBottom: 12, alignItems: "flex-start" }}>
                 <div style={{
@@ -228,51 +260,8 @@ function PackPreview({ pack, onClose }) {
           })}
         </div>
 
-      {/* Download button */}
-       <div style={{ padding: "0 36px 28px" }}>
-          {pack.pdf && pack.pdf.length > 0 ? (
-            <div>
-              
-                <a></a>href={pack.paywall_url || `/packs/${pack.pdf}`}
-                download={!pack.paywall_url ? true : undefined}
-                target={pack.paywall_url ? "_blank" : undefined}
-                rel={pack.paywall_url ? "noopener noreferrer" : undefined}
-                onClick={e => e.stopPropagation()}
-                style={{
-                  display: "flex", alignItems: "center", justifyContent: "center", gap: 10,
-                  width: "100%", padding: "16px 24px",
-                  background: domain.color, color: C.white,
-                  borderRadius: 10, textDecoration: "none",
-                  fontFamily: "'Libre Baskerville', Georgia, serif",
-                  fontSize: 15, fontWeight: 700, letterSpacing: 0.5,
-                  transition: "opacity 0.2s", cursor: "pointer",
-                }}
-                onMouseEnter={e => e.currentTarget.style.opacity = "0.85"}
-                onMouseLeave={e => e.currentTarget.style.opacity = "1"}
-              >
-                <span style={{ fontSize: 18 }}>{pack.paywall_url ? "→" : "↓"}</span>
-                {pack.paywall_url ? "Get This iMPACT Pack" : "Download Full iMPACT Pack (PDF)"}
-              </a>
-              <p style={{ textAlign: "center", fontSize: 11, color: C.midGray, margin: "10px 0 0", fontFamily: "system-ui" }}>
-                Includes: Challenge · Evidence Guide · Rubric · Teacher Setup · FAQ · Parent Letter
-              </p>
-            </div>
-          ) : (
-            <div style={{
-              width: "100%", padding: "16px 24px",
-              background: C.warmGray, borderRadius: 10,
-              textAlign: "center",
-            }}>
-              <p style={{ fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 15, fontWeight: 700, color: C.midGray, margin: "0 0 4px" }}>
-                Coming Soon
-              </p>
-              <p style={{ fontSize: 11, color: C.midGray, margin: 0, fontFamily: "system-ui" }}>
-                This iMPACT Pack is in development
-              </p>
-            </div>
-          )}
-        </div>
-        {/* Footer */}
+        <DownloadButton pack={pack} domainColor={domain.color} />
+
         <div style={{
           background: C.navy, padding: "20px 36px",
           display: "flex", alignItems: "center", justifyContent: "space-between",
@@ -285,49 +274,58 @@ function PackPreview({ pack, onClose }) {
           <span style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", fontFamily: "system-ui" }}>DNACreative</span>
         </div>
 
-        {/* Close button */}
         <button onClick={onClose} style={{
           position: "absolute", top: 16, right: 16, width: 36, height: 36, borderRadius: "50%",
           background: "rgba(255,255,255,0.15)", border: "none", cursor: "pointer",
           color: C.white, fontSize: 20, display: "flex", alignItems: "center", justifyContent: "center",
           backdropFilter: "blur(4px)", transition: "background 0.2s",
         }}
-          onMouseEnter={e => e.target.style.background = "rgba(255,255,255,0.3)"}
-          onMouseLeave={e => e.target.style.background = "rgba(255,255,255,0.15)"}
+          onMouseEnter={function(e) { e.target.style.background = "rgba(255,255,255,0.3)"; }}
+          onMouseLeave={function(e) { e.target.style.background = "rgba(255,255,255,0.15)"; }}
         >×</button>
       </div>
     </div>
   );
 }
 
-// ─── Packs Page ─────────────────────────────────────────────────────────────
-
 function PacksPage() {
-  const [packs, setPacks] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [query, setQuery] = useState("");
-  const [activeDomain, setActiveDomain] = useState(null);
-  const [selectedPack, setSelectedPack] = useState(null);
-  const [animatedIn, setAnimatedIn] = useState(false);
-  const inputRef = useRef(null);
+  var _packs = useState([]);
+  var packs = _packs[0];
+  var setPacks = _packs[1];
+  var _loading = useState(true);
+  var loading = _loading[0];
+  var setLoading = _loading[1];
+  var _query = useState("");
+  var query = _query[0];
+  var setQuery = _query[1];
+  var _domain = useState(null);
+  var activeDomain = _domain[0];
+  var setActiveDomain = _domain[1];
+  var _selected = useState(null);
+  var selectedPack = _selected[0];
+  var setSelectedPack = _selected[1];
+  var _anim = useState(false);
+  var animatedIn = _anim[0];
+  var setAnimatedIn = _anim[1];
+  var inputRef = useRef(null);
 
-  useEffect(() => {
+  useEffect(function() {
     fetch("/packs.json")
-      .then(r => r.json())
-      .then(data => {
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
         setPacks(data);
         setLoading(false);
-        setTimeout(() => setAnimatedIn(true), 50);
+        setTimeout(function() { setAnimatedIn(true); }, 50);
       })
-      .catch(() => { setLoading(false); setAnimatedIn(true); });
+      .catch(function() { setLoading(false); setAnimatedIn(true); });
   }, []);
 
-  const hasSearch = query.length > 0 || activeDomain !== null;
+  var hasSearch = query.length > 0 || activeDomain !== null;
 
-  const filtered = packs.filter(p => {
-    const matchesDomain = !activeDomain || p.domain === activeDomain;
-    const q = query.toLowerCase();
-    const matchesQuery = !q ||
+  var filtered = packs.filter(function(p) {
+    var matchesDomain = !activeDomain || p.domain === activeDomain;
+    var q = query.toLowerCase();
+    var matchesQuery = !q ||
       p.unit.toLowerCase().includes(q) ||
       p.subject.toLowerCase().includes(q) ||
       p.title.toLowerCase().includes(q) ||
@@ -336,18 +334,14 @@ function PacksPage() {
     return matchesDomain && matchesQuery;
   });
 
-  const suggestedTerms = ["energy", "persuasive writing", "nutrition", "biodiversity", "design", "financial literacy", "accessibility", "transport", "sound", "enterprise"];
+  var suggestedTerms = ["energy", "persuasive writing", "nutrition", "biodiversity", "design", "financial literacy", "accessibility", "transport", "sound", "enterprise"];
 
   return (
-    <>
-      {/* Background dots */}
+    <div>
       <Dots color={C.orange} count={8} area="topright" />
       <Dots color={C.lime} count={6} area="bottomleft" />
 
-      {/* Header */}
-      <div style={{
-        background: C.navy, padding: "48px 32px 44px", position: "relative", overflow: "hidden",
-      }}>
+      <div style={{ background: C.navy, padding: "48px 32px 44px", position: "relative", overflow: "hidden" }}>
         <Dots color={C.orange} count={15} area="all" />
         <Dots color={C.cyan} count={10} area="all" />
         <div style={{ maxWidth: 800, margin: "0 auto", position: "relative", zIndex: 1 }}>
@@ -359,14 +353,12 @@ function PacksPage() {
               Making Learning Matter
             </p>
           </div>
-
-          {/* Search */}
           <div style={{
             opacity: animatedIn ? 1 : 0, transform: animatedIn ? "translateY(0)" : "translateY(20px)",
             transition: "all 0.8s ease-out 0.2s",
           }}>
             <label style={{ display: "block", fontSize: 22, color: C.white, marginBottom: 16, fontWeight: 700, lineHeight: 1.3 }}>
-              Make my unit on <span style={{ borderBottom: `3px solid ${C.orange}`, paddingBottom: 2 }}>_____</span> matter
+              Make my unit on <span style={{ borderBottom: "3px solid " + C.orange, paddingBottom: 2 }}>_____</span> matter
             </label>
             <div style={{ position: "relative" }}>
               <input
@@ -374,21 +366,20 @@ function PacksPage() {
                 type="text"
                 placeholder="energy, persuasive writing, nutrition, biodiversity..."
                 value={query}
-                onChange={e => setQuery(e.target.value)}
+                onChange={function(e) { setQuery(e.target.value); }}
                 style={{
                   width: "100%", padding: "16px 20px", fontSize: 17,
                   fontFamily: "'Libre Baskerville', Georgia, serif",
                   border: "none", borderRadius: 12,
                   background: "rgba(255,255,255,0.12)",
                   color: C.white, outline: "none",
-                  boxSizing: "border-box",
-                  transition: "background 0.3s",
+                  boxSizing: "border-box", transition: "background 0.3s",
                 }}
-                onFocus={e => e.target.style.background = "rgba(255,255,255,0.18)"}
-                onBlur={e => e.target.style.background = "rgba(255,255,255,0.12)"}
+                onFocus={function(e) { e.target.style.background = "rgba(255,255,255,0.18)"; }}
+                onBlur={function(e) { e.target.style.background = "rgba(255,255,255,0.12)"; }}
               />
               {query && (
-                <button onClick={() => setQuery("")} style={{
+                <button onClick={function() { setQuery(""); }} style={{
                   position: "absolute", right: 14, top: "50%", transform: "translateY(-50%)",
                   background: "none", border: "none", color: "rgba(255,255,255,0.5)",
                   fontSize: 20, cursor: "pointer", padding: 4,
@@ -399,33 +390,35 @@ function PacksPage() {
         </div>
       </div>
 
-      {/* Domain filters */}
       <div style={{ maxWidth: 800, margin: "0 auto", padding: "24px 32px 0" }}>
         <div style={{
           display: "flex", gap: 8, flexWrap: "wrap",
           opacity: animatedIn ? 1 : 0, transform: animatedIn ? "translateY(0)" : "translateY(10px)",
           transition: "all 0.6s ease-out 0.4s",
         }}>
-          <button onClick={() => setActiveDomain(null)} style={{
-            padding: "8px 20px", borderRadius: 24, border: `2px solid ${C.warmGray}`,
+          <button onClick={function() { setActiveDomain(null); }} style={{
+            padding: "8px 20px", borderRadius: 24, border: "2px solid " + C.warmGray,
             background: !activeDomain ? C.navy : "transparent",
             color: !activeDomain ? C.white : C.midGray,
             fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 13,
             cursor: "pointer", fontWeight: 600, transition: "all 0.2s",
           }}>All Domains</button>
-          {Object.entries(domains).map(([key, d]) => (
-            <button key={key} onClick={() => setActiveDomain(activeDomain === key ? null : key)} style={{
-              padding: "8px 20px", borderRadius: 24, border: `2px solid ${d.color}`,
-              background: activeDomain === key ? d.color : "transparent",
-              color: activeDomain === key ? C.white : d.color,
-              fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 13,
-              cursor: "pointer", fontWeight: 600, transition: "all 0.2s",
-            }}>{d.label}</button>
-          ))}
+          {Object.entries(domains).map(function(entry) {
+            var key = entry[0];
+            var d = entry[1];
+            return (
+              <button key={key} onClick={function() { setActiveDomain(activeDomain === key ? null : key); }} style={{
+                padding: "8px 20px", borderRadius: 24, border: "2px solid " + d.color,
+                background: activeDomain === key ? d.color : "transparent",
+                color: activeDomain === key ? C.white : d.color,
+                fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 13,
+                cursor: "pointer", fontWeight: 600, transition: "all 0.2s",
+              }}>{d.label}</button>
+            );
+          })}
         </div>
       </div>
 
-      {/* Results */}
       <div style={{ maxWidth: 800, margin: "0 auto", padding: "20px 32px 60px" }}>
         {loading ? (
           <div style={{ textAlign: "center", padding: "80px 20px", color: C.midGray }}>
@@ -438,12 +431,14 @@ function PacksPage() {
             transition: "all 0.8s ease-out 0.6s",
           }}>
             <div style={{ marginBottom: 24 }}>
-              {Object.values(domains).map((d, i) => (
-                <span key={i} style={{
-                  display: "inline-block", width: 12, height: 12, borderRadius: "50%",
-                  background: d.color, margin: "0 6px", opacity: 0.6,
-                }} />
-              ))}
+              {Object.values(domains).map(function(d, i) {
+                return (
+                  <span key={i} style={{
+                    display: "inline-block", width: 12, height: 12, borderRadius: "50%",
+                    background: d.color, margin: "0 6px", opacity: 0.6,
+                  }} />
+                );
+              })}
             </div>
             <p style={{ fontSize: 20, color: C.navy, fontWeight: 700, marginBottom: 8, lineHeight: 1.4 }}>
               What do you teach?
@@ -452,42 +447,45 @@ function PacksPage() {
               Type a topic, subject, or keyword above and discover how to turn your existing unit into an opportunity for real-world positive impact.
             </p>
             <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap" }}>
-              {suggestedTerms.map(term => (
-                <button key={term} onClick={() => { setQuery(term); inputRef.current?.focus(); }} style={{
-                  padding: "8px 18px", borderRadius: 20,
-                  background: "transparent", border: `1.5px solid ${C.warmGray}`,
-                  color: C.midGray, fontFamily: "'Libre Baskerville', Georgia, serif",
-                  fontSize: 13, cursor: "pointer", transition: "all 0.2s",
-                }}
-                  onMouseEnter={e => { e.target.style.borderColor = C.orange; e.target.style.color = C.orange; }}
-                  onMouseLeave={e => { e.target.style.borderColor = C.warmGray; e.target.style.color = C.midGray; }}
-                >{term}</button>
-              ))}
+              {suggestedTerms.map(function(term) {
+                return (
+                  <button key={term} onClick={function() { setQuery(term); if (inputRef.current) inputRef.current.focus(); }} style={{
+                    padding: "8px 18px", borderRadius: 20,
+                    background: "transparent", border: "1.5px solid " + C.warmGray,
+                    color: C.midGray, fontFamily: "'Libre Baskerville', Georgia, serif",
+                    fontSize: 13, cursor: "pointer", transition: "all 0.2s",
+                  }}
+                    onMouseEnter={function(e) { e.target.style.borderColor = C.orange; e.target.style.color = C.orange; }}
+                    onMouseLeave={function(e) { e.target.style.borderColor = C.warmGray; e.target.style.color = C.midGray; }}
+                  >{term}</button>
+                );
+              })}
             </div>
           </div>
         ) : (
-          <>
+          <div>
             <p style={{ fontSize: 13, color: C.midGray, margin: "0 0 20px", fontStyle: "italic" }}>
               {filtered.length} impact {filtered.length === 1 ? "pack" : "packs"} found
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-              {filtered.map((pack) => {
-                const domain = domains[pack.domain];
-                const isFree = pack.access === "free";
+              {filtered.map(function(pack) {
+                var domain = domains[pack.domain];
+                var isFree = pack.access === "free";
+                var hasPdf = pack.pdf && pack.pdf.length > 0;
                 return (
-                  <div key={pack.id} onClick={() => setSelectedPack(pack)} style={{
+                  <div key={pack.id} onClick={function() { setSelectedPack(pack); }} style={{
                     background: C.white, borderRadius: 14, overflow: "hidden",
                     cursor: "pointer", position: "relative",
                     boxShadow: "0 2px 12px rgba(27,42,74,0.06)",
                     transition: "all 0.25s ease",
                     border: "1px solid transparent",
                   }}
-                    onMouseEnter={e => {
+                    onMouseEnter={function(e) {
                       e.currentTarget.style.boxShadow = "0 8px 32px rgba(27,42,74,0.12)";
                       e.currentTarget.style.transform = "translateY(-3px)";
                       e.currentTarget.style.borderColor = domain.color + "44";
                     }}
-                    onMouseLeave={e => {
+                    onMouseLeave={function(e) {
                       e.currentTarget.style.boxShadow = "0 2px 12px rgba(27,42,74,0.06)";
                       e.currentTarget.style.transform = "translateY(0)";
                       e.currentTarget.style.borderColor = "transparent";
@@ -514,8 +512,16 @@ function PacksPage() {
                             fontSize: 10, fontWeight: 700,
                             color: isFree ? C.lime : C.purple,
                             letterSpacing: 0.8, textTransform: "uppercase", fontFamily: "system-ui",
-                            border: `1px solid ${isFree ? C.lime + "44" : C.purple + "33"}`,
+                            border: "1px solid " + (isFree ? C.lime + "44" : C.purple + "33"),
                           }}>{isFree ? "✓ Free" : "Premium"}</span>
+                        )}
+                        {!hasPdf && (
+                          <span style={{
+                            display: "inline-block", padding: "3px 10px", borderRadius: 12,
+                            background: C.warmGray, fontSize: 10, fontWeight: 600,
+                            color: C.midGray, letterSpacing: 0.5, fontFamily: "system-ui",
+                            fontStyle: "italic",
+                          }}>Coming Soon</span>
                         )}
                       </div>
                       <h3 style={{ fontSize: 15, color: C.navy, fontWeight: 700, margin: "0 0 4px", lineHeight: 1.35 }}>
@@ -536,45 +542,46 @@ function PacksPage() {
             {filtered.length === 0 && (
               <div style={{ textAlign: "center", padding: "60px 20px", color: C.midGray, fontStyle: "italic" }}>
                 <p style={{ fontSize: 18, marginBottom: 8 }}>No packs match that search yet.</p>
-                <p style={{ fontSize: 14 }}>We're building new iMPACT Packs all the time. Try a different keyword or browse all domains.</p>
+                <p style={{ fontSize: 14 }}>We are building new iMPACT Packs all the time. Try a different keyword or browse all domains.</p>
               </div>
             )}
-          </>
+          </div>
         )}
       </div>
 
-      {selectedPack && <PackPreview pack={selectedPack} onClose={() => setSelectedPack(null)} />}
-    </>
+      {selectedPack && <PackPreview pack={selectedPack} onClose={function() { setSelectedPack(null); }} />}
+    </div>
   );
 }
 
-// ─── PD Page ────────────────────────────────────────────────────────────────
-
 function PDPage() {
-  const [sessions, setSessions] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [animatedIn, setAnimatedIn] = useState(false);
+  var _sessions = useState([]);
+  var sessions = _sessions[0];
+  var setSessions = _sessions[1];
+  var _loading = useState(true);
+  var loading = _loading[0];
+  var setLoading = _loading[1];
+  var _anim = useState(false);
+  var animatedIn = _anim[0];
+  var setAnimatedIn = _anim[1];
 
-  useEffect(() => {
+  useEffect(function() {
     fetch("/pd.json")
-      .then(r => r.json())
-      .then(data => {
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
         setSessions(data);
         setLoading(false);
-        setTimeout(() => setAnimatedIn(true), 50);
+        setTimeout(function() { setAnimatedIn(true); }, 50);
       })
-      .catch(() => { setLoading(false); setAnimatedIn(true); });
+      .catch(function() { setLoading(false); setAnimatedIn(true); });
   }, []);
 
   return (
-    <>
+    <div>
       <Dots color={C.purple} count={8} area="topright" />
       <Dots color={C.cyan} count={6} area="bottomleft" />
 
-      {/* Header */}
-      <div style={{
-        background: C.navy, padding: "48px 32px 44px", position: "relative", overflow: "hidden",
-      }}>
+      <div style={{ background: C.navy, padding: "48px 32px 44px", position: "relative", overflow: "hidden" }}>
         <Dots color={C.purple} count={12} area="all" />
         <Dots color={C.orange} count={8} area="all" />
         <div style={{ maxWidth: 800, margin: "0 auto", position: "relative", zIndex: 1 }}>
@@ -601,7 +608,6 @@ function PDPage() {
         </div>
       </div>
 
-      {/* Sessions */}
       <div style={{ maxWidth: 800, margin: "0 auto", padding: "40px 32px 60px" }}>
         {loading ? (
           <div style={{ textAlign: "center", padding: "80px 20px", color: C.midGray }}>
@@ -609,59 +615,51 @@ function PDPage() {
           </div>
         ) : (
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-            {sessions.map((session, i) => (
-              <div key={session.id} style={{
-                background: C.white, borderRadius: 14, overflow: "hidden",
-                boxShadow: "0 2px 12px rgba(27,42,74,0.06)",
-                border: "1px solid transparent",
-                transition: "all 0.25s ease",
-                opacity: animatedIn ? 1 : 0,
-                transform: animatedIn ? "translateY(0)" : "translateY(15px)",
-              }}>
-                {/* Accent bar */}
-                <div style={{ height: 4, background: `linear-gradient(90deg, ${C.purple}, ${C.orange})` }} />
-
-                <div style={{ padding: "28px 32px" }}>
-                  {/* Meta tags */}
-                  <div style={{ display: "flex", gap: 8, marginBottom: 16, flexWrap: "wrap" }}>
-                    <span style={{
-                      display: "inline-block", padding: "3px 12px", borderRadius: 12,
-                      background: C.purple, fontSize: 10, fontWeight: 700,
-                      color: C.white, letterSpacing: 1, textTransform: "uppercase", fontFamily: "system-ui",
-                    }}>{session.format}</span>
-                    <span style={{
-                      display: "inline-block", padding: "3px 12px", borderRadius: 12,
-                      background: C.warmGray, fontSize: 10, fontWeight: 600,
-                      color: C.midGray, letterSpacing: 0.5, fontFamily: "system-ui",
-                    }}>{session.duration}</span>
-                    <span style={{
-                      display: "inline-block", padding: "3px 12px", borderRadius: 12,
-                      background: C.warmGray, fontSize: 10, fontWeight: 600,
-                      color: C.midGray, letterSpacing: 0.5, fontFamily: "system-ui",
-                    }}>{session.audience}</span>
+            {sessions.map(function(session) {
+              return (
+                <div key={session.id} style={{
+                  background: C.white, borderRadius: 14, overflow: "hidden",
+                  boxShadow: "0 2px 12px rgba(27,42,74,0.06)",
+                  border: "1px solid transparent", transition: "all 0.25s ease",
+                }}>
+                  <div style={{ height: 4, background: "linear-gradient(90deg, " + C.purple + ", " + C.orange + ")" }} />
+                  <div style={{ padding: "28px 32px" }}>
+                    <div style={{ display: "flex", gap: 8, marginBottom: 16, flexWrap: "wrap" }}>
+                      <span style={{
+                        display: "inline-block", padding: "3px 12px", borderRadius: 12,
+                        background: C.purple, fontSize: 10, fontWeight: 700,
+                        color: C.white, letterSpacing: 1, textTransform: "uppercase", fontFamily: "system-ui",
+                      }}>{session.format}</span>
+                      <span style={{
+                        display: "inline-block", padding: "3px 12px", borderRadius: 12,
+                        background: C.warmGray, fontSize: 10, fontWeight: 600,
+                        color: C.midGray, letterSpacing: 0.5, fontFamily: "system-ui",
+                      }}>{session.duration}</span>
+                      <span style={{
+                        display: "inline-block", padding: "3px 12px", borderRadius: 12,
+                        background: C.warmGray, fontSize: 10, fontWeight: 600,
+                        color: C.midGray, letterSpacing: 0.5, fontFamily: "system-ui",
+                      }}>{session.audience}</span>
+                    </div>
+                    <h3 style={{
+                      fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 18, color: C.navy,
+                      fontWeight: 700, margin: "0 0 6px", lineHeight: 1.3,
+                    }}>{session.title}</h3>
+                    <p style={{
+                      fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 14, color: C.orange,
+                      margin: "0 0 16px", fontStyle: "italic", lineHeight: 1.4,
+                    }}>{session.subtitle}</p>
+                    <p style={{
+                      fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 14, color: C.darkText,
+                      margin: 0, lineHeight: 1.7,
+                    }}>{session.description}</p>
                   </div>
-
-                  <h3 style={{
-                    fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 18, color: C.navy,
-                    fontWeight: 700, margin: "0 0 6px", lineHeight: 1.3,
-                  }}>{session.title}</h3>
-
-                  <p style={{
-                    fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 14, color: C.orange,
-                    margin: "0 0 16px", fontStyle: "italic", lineHeight: 1.4,
-                  }}>{session.subtitle}</p>
-
-                  <p style={{
-                    fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 14, color: C.darkText,
-                    margin: 0, lineHeight: 1.7,
-                  }}>{session.description}</p>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
 
-        {/* Enquiry CTA */}
         {!loading && sessions.length > 0 && (
           <div style={{
             marginTop: 48, textAlign: "center", padding: "40px 32px",
@@ -677,7 +675,7 @@ function PDPage() {
                 fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 14,
                 color: "rgba(255,255,255,0.6)", margin: "0 0 24px", lineHeight: 1.6,
               }}>
-                All sessions can be delivered in-person or virtually, and tailored to your school's context.
+                All sessions can be delivered in-person or virtually, and tailored to your school context.
               </p>
               <a
                 href="mailto:hello@dnacreative.co?subject=iMPACT%20PD%20Enquiry"
@@ -687,26 +685,26 @@ function PDPage() {
                   textDecoration: "none", fontFamily: "'Libre Baskerville', Georgia, serif",
                   fontSize: 15, fontWeight: 700, transition: "opacity 0.2s",
                 }}
-                onMouseEnter={e => e.currentTarget.style.opacity = "0.85"}
-                onMouseLeave={e => e.currentTarget.style.opacity = "1"}
+                onMouseEnter={function(e) { e.currentTarget.style.opacity = "0.85"; }}
+                onMouseLeave={function(e) { e.currentTarget.style.opacity = "1"; }}
               >Get in Touch</a>
             </div>
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
 
-// ─── App Shell ──────────────────────────────────────────────────────────────
-
 export default function App() {
-  const [page, setPage] = useState("packs");
+  var _page = useState("packs");
+  var page = _page[0];
+  var setPage = _page[1];
 
-  const navigate = (p) => {
+  function navigate(p) {
     setPage(p);
     window.scrollTo(0, 0);
-  };
+  }
 
   return (
     <div style={{
@@ -716,7 +714,7 @@ export default function App() {
       <NavBar page={page} onNav={navigate} />
       {page === "packs" && <PacksPage />}
       {page === "pd" && <PDPage />}
-      <Footer />
+      <SiteFooter />
     </div>
   );
 }
