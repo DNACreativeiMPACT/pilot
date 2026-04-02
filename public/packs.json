@@ -532,30 +532,5 @@
       "Harvest: Enterprise fair, share impact stories, grade sustained benefit and ethical practice"
     ],
     "pdf": "iMPACT_Pack_Ethical_Business.pdf"
-  },
-{
-    "id": 21,
-    "domain": "self",
-    "subject": "I&S, PHE",
-    "unit": "Hacking Habits",
-    "title": "Making Habit Learning Matter",
-    "subtitle": "by Setting Personal Goals for Meaningful Change",
-    "challenge": "Students set personal goals for change based on pschyology and track their implementation",
-    "evidence": [
-      "Personal journal and plan",
-      "Evidence of lifestyle changes",
-      "Personal benfits evidenced",
-      "Family/community testimony",
-    ],
-    "window": "10–12 weeks",
-    "grading": "High — graded once students have had a chance to embed new habits",
-    "ai": "High — human habits with human behaviours",
-    "phases": [
-      "Prepare: Set goals and plan, identify healthier habits",
-      "Teach: Normal pyschology/healthy habits unit + plan habit hacks",
-      "Live It: Attempt behavioural habit shifts based on health and human pyschology",
-      "Harvest: Hack journals, video reflections or diary shares"
-    ],
-    "pdf": "iMPACT_Pack_Hacking_Habits.pdf"
   }
 ]
