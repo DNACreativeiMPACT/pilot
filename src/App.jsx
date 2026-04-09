@@ -87,52 +87,75 @@ function SiteFooter() {
   );
 }
 
-function DownloadButton({ pack, domainColor }) {
-  var hasPdf = pack.pdf && pack.pdf.length > 0;
+function PackDownloadBox({ label, subtitle, filename, paywallUrl, color }) {
+  var hasFile = filename && filename.length > 0;
 
-  if (hasPdf) {
+  if (hasFile) {
     return (
-      <div style={{ padding: "0 36px 28px" }}>
+      <div style={{ flex: 1 }}>
         <a
-          href={pack.paywall_url || ("/packs/" + pack.pdf)}
-          download={!pack.paywall_url ? true : undefined}
-          target={pack.paywall_url ? "_blank" : undefined}
-          rel={pack.paywall_url ? "noopener noreferrer" : undefined}
+          href={paywallUrl || ("/packs/" + filename)}
+          download={!paywallUrl ? true : undefined}
+          target={paywallUrl ? "_blank" : undefined}
+          rel={paywallUrl ? "noopener noreferrer" : undefined}
           onClick={function(e) { e.stopPropagation(); }}
           style={{
-            display: "flex", alignItems: "center", justifyContent: "center", gap: 10,
-            width: "100%", padding: "16px 24px",
-            background: domainColor, color: C.white,
+            display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+            width: "100%", padding: "14px 16px",
+            background: color, color: C.white,
             borderRadius: 10, textDecoration: "none",
             fontFamily: "'Libre Baskerville', Georgia, serif",
-            fontSize: 15, fontWeight: 700, letterSpacing: 0.5,
+            fontSize: 14, fontWeight: 700, letterSpacing: 0.3,
             transition: "opacity 0.2s", cursor: "pointer",
           }}
           onMouseEnter={function(e) { e.currentTarget.style.opacity = "0.85"; }}
           onMouseLeave={function(e) { e.currentTarget.style.opacity = "1"; }}
         >
-          <span style={{ fontSize: 18 }}>{pack.paywall_url ? "→" : "↓"}</span>
-          {pack.paywall_url ? "Get This iMPACT Pack" : "Download Full iMPACT Pack (PDF)"}
+          <span style={{ fontSize: 16 }}>{paywallUrl ? "→" : "↓"}</span>
+          {label}
         </a>
-        <p style={{ textAlign: "center", fontSize: 11, color: C.midGray, margin: "10px 0 0", fontFamily: "system-ui" }}>
-          Includes: Challenge · Evidence Guide · Rubric · Teacher Setup · FAQ · Parent Letter
+        <p style={{ textAlign: "center", fontSize: 10, color: C.midGray, margin: "8px 0 0", fontFamily: "system-ui", lineHeight: 1.4 }}>
+          {subtitle}
         </p>
       </div>
     );
   }
 
   return (
-    <div style={{ padding: "0 36px 28px" }}>
+    <div style={{ flex: 1 }}>
       <div style={{
-        width: "100%", padding: "16px 24px",
+        width: "100%", padding: "14px 16px",
         background: C.warmGray, borderRadius: 10, textAlign: "center",
       }}>
-        <p style={{ fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 15, fontWeight: 700, color: C.midGray, margin: "0 0 4px" }}>
+        <p style={{ fontFamily: "'Libre Baskerville', Georgia, serif", fontSize: 14, fontWeight: 700, color: C.midGray, margin: "0 0 2px" }}>
+          {label}
+        </p>
+        <p style={{ fontSize: 11, color: C.midGray, margin: 0, fontFamily: "system-ui", fontStyle: "italic" }}>
           Coming Soon
         </p>
-        <p style={{ fontSize: 11, color: C.midGray, margin: 0, fontFamily: "system-ui" }}>
-          This iMPACT Pack is in development
-        </p>
+      </div>
+    </div>
+  );
+}
+
+function DownloadButton({ pack, domainColor }) {
+  return (
+    <div style={{ padding: "0 36px 28px" }}>
+      <div style={{ display: "flex", gap: 12 }}>
+        <PackDownloadBox
+          label="Teacher Pack"
+          subtitle="Challenge · Evidence Guide · Rubric · Teacher Setup · FAQ · Parent Letter"
+          filename={pack.pdf}
+          paywallUrl={pack.paywall_url}
+          color={domainColor}
+        />
+        <PackDownloadBox
+          label="Student Pack"
+          subtitle="Challenge · Evidence Checklist · Student Rubric · Household Sign-off"
+          filename={pack.student_pdf}
+          paywallUrl={pack.student_paywall_url}
+          color={C.navy}
+        />
       </div>
     </div>
   );
